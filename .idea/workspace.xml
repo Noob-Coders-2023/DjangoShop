@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d30d1b1c-cb06-463d-826b-0f7d7c0a66ba" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/DjangoShop/Views.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoShop/Views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DjangoShop/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoShop/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DjangoShop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoShop/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +60,7 @@
       <workItem from="1702899498389" duration="6059000" />
       <workItem from="1702988617295" duration="3072000" />
       <workItem from="1702997702674" duration="33000" />
-      <workItem from="1702997736773" duration="9741000" />
+      <workItem from="1702997736773" duration="10072000" />
     </task>
     <servers />
   </component>
