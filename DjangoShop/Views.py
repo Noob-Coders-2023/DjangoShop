@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .forms import ContactForm, LoginForm
+from .forms import ContactForm, LoginForm, RegisterForm
 
 
 def home(request):
@@ -54,4 +54,10 @@ def login_page(request):
 
 
 def register_page(request):
-    pass
+    register_form = RegisterForm(request.POST or None)
+    context = {
+        'title': 'Register Page',
+        'message': 'Register Form',
+        'register_form': register_form
+    }
+    return render(request, 'auth/register.html', context)
