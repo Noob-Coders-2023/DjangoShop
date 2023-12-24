@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django import forms
 
 
@@ -11,18 +12,30 @@ class LoginForm(forms.Form):
     username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your username.'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Enter your username.'}))
 
+User = get_user_model()
 
 class RegisterForm(forms.Form):
     username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your username.'}))
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Enter your email.'}))
     password = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Enter your username.'}))
     password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Re-enter your username.'}))
+
+    def clean_username(self):
+        username = self.cleaned_data.get('username')
+        query = User.objects.filter(username=username)
+
+        if query.exists():
+            raise forms.ValidationError('This username is already taken.')
+        return username
+
     def clean_email(self):
         email = self.cleaned_data.get('email')
+        query = User.objects.filter(email=email)
 
-        if not "@" in email:
-            raise forms.ValidationError('You must enter a valid email.')
+        if query.exists():
+            raise forms.ValidationError('This email is already registered.')
         return email
+
     def clean(self):
         data = self.cleaned_data
         password = self.cleaned_data.get('password')

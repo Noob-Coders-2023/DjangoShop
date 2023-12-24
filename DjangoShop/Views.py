@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, get_user_model
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import ContactForm, LoginForm, RegisterForm
@@ -35,9 +35,7 @@ def login_page(request):
     login_form = LoginForm(request.POST or None)
     if login_form.is_valid():
         username = login_form.cleaned_data.get('username')
-        print(username)
         password = login_form.cleaned_data.get('password')
-        print(password)
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
@@ -52,9 +50,16 @@ def login_page(request):
     }
     return render(request, 'auth/login.html', context)
 
-
+User = get_user_model()
 def register_page(request):
     register_form = RegisterForm(request.POST or None)
+
+    if register_form.is_valid():
+        username = register_form.cleaned_data.get('username')
+        email = register_form.cleaned_data.get('email')
+        password = register_form.cleaned_data.get('password')
+        User.object.create_user(username=username, email=email, password=password)
+
     context = {
         'title': 'Register Page',
         'message': 'Register Form',
