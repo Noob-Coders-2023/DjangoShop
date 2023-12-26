@@ -8,20 +8,18 @@
 
 <h1>Products list</h1>
 
-{#{% for product in products_list %}#}
-{##}
-{#    <h3>{{ product.title }}</h3>#}
+{% for product in products_list %}
+    <h3>{{ product.title }}</h3>
+    <a href="/products-fb/{{ product.id }}">Read more...</a>
 {#    <p>{{ product.description }}</p>#}
 {#    <p>{{ product.price }}</p>#}
-{##}
-{#{% endfor %}#}
+{% endfor %}
 
-<br>
 
 {% for product in object_list %}
     <h3>{{ product.title }}</h3>
-    <p>{{ product.description }}</p>
-    <p>{{ product.price }}</p>
+{#    <p>{{ product.description }}</p>#}
+{#    <p>{{ product.price }}</p>#}
 {% endfor %}
 </body>
 </html>

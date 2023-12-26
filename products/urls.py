@@ -4,11 +4,13 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from .views import products_view, ProductsView
+from .views import products_view, ProductsView, product_detail, ProductDetailView
 
 app_name = "products"
 
 urlpatterns = [
     path('products-fb', products_view),
     path('products-cb', ProductsView.as_view()),
+    path('products-fb/<productID>', product_detail),
+    path('products-cb/<pk>', ProductDetailView.as_view()),
 ]
