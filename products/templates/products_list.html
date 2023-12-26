@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Products list</h1>
+
+{#{% for product in products_list %}#}
+{##}
+{#    <h3>{{ product.title }}</h3>#}
+{#    <p>{{ product.description }}</p>#}
+{#    <p>{{ product.price }}</p>#}
+{##}
+{#{% endfor %}#}
+
+<br>
+
+{% for product in object_list %}
+    <h3>{{ product.title }}</h3>
+    <p>{{ product.description }}</p>
+    <p>{{ product.price }}</p>
+{% endfor %}
+</body>
+</html>
