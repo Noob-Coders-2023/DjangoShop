@@ -45,7 +45,8 @@ def login_page(request):
 
 
     context = {
-        'message': 'Hi. This is login page.',
+        'title': 'Login Page',
+        'message': 'Login Form',
         'login_form': login_form
     }
     return render(request, 'auth/login.html', context)
