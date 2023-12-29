@@ -50,15 +50,31 @@ class ProductDetailView(DetailView):
         return product
 
 
-class ProductActiveList(ListView):
+class ProductsActiveList(ListView):
     template_name = "products_list.html"
 
     def get_queryset(self):
-        return Product.objects.get_active_products()
+        # return Product.objects.get_active_products()
+        return Product.objects.get_active_show_products()
 
 
-class ProductActiveDetail(DetailView):
+class ProductsActiveDetail(DetailView):
     template_name = "product_detail.html"
 
     def get_queryset(self):
         return Product.objects.get_active_products()
+
+
+class ProductShowWithSlug(DetailView):
+    template_name = "product_detail.html"
+
+    def get_object(self, *args, **kwargs):
+        slug = self.kwargs.get('slug')
+        try:
+            product = Product.objects.get(slug=slug, active=True)
+        except Product.DoesNotExist:
+            raise Http404("Product does not found!")
+        except Product.MultipleObjectsReturned:
+            raise Http404("")
+
+        return product
