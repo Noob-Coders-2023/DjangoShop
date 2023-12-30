@@ -12,7 +12,7 @@ from .views import (products_view, ProductsView,
 app_name = "products"
 
 urlpatterns = [
-    path('', products_view),
+    path('', products_view, name='productView'),
     path('<slug>', ProductShowWithSlug.as_view(), name='detail'),
     # path('products-cb', ProductsView.as_view()),
     # path('products-fb/<productID>', product_detail),

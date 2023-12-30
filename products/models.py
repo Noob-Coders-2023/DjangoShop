@@ -50,6 +50,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to=upload_image, null=True, blank=True)
     active = models.BooleanField(default=False)
     show = models.BooleanField(default=False)
+    time = models.DateTimeField(auto_now_add=True)
     # date_create = models.DateTimeField(auto_now_add=True)
 
     objects = ProductManageObjects()
@@ -58,7 +59,7 @@ class Product(models.Model):
         return self.title
 
     def product_url(self):
-        return f"products/{self.slug}"
+        return f"/products/{self.slug}"
 
 
 def product_pre_save_receiver(sender, instance, *args, **kwargs):
