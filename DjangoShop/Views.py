@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login, get_user_model
+from django.contrib.auth import authenticate, login, get_user_model, logout
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import ContactForm, LoginForm, RegisterForm
@@ -11,11 +11,13 @@ def home(request):
     }
     return render(request, 'home.html', context)
 
+
 def about_us(request):
     context = {
         'about_us': 'Hi. This is about us page.'
     }
     return render(request, 'about_us.html', context)
+
 
 def contact_us(request):
     contact_form = ContactForm()
@@ -43,7 +45,6 @@ def login_page(request):
         else:
             print('Error')
 
-
     context = {
         'title': 'Login Page',
         'message': 'Login Form',
@@ -51,7 +52,10 @@ def login_page(request):
     }
     return render(request, 'auth/login.html', context)
 
+
 User = get_user_model()
+
+
 def register_page(request):
     register_form = RegisterForm(request.POST or None)
 
@@ -67,3 +71,8 @@ def register_page(request):
         'register_form': register_form
     }
     return render(request, 'auth/register.html', context)
+
+
+def log_out(request):
+    logout(request)
+    return redirect('/')

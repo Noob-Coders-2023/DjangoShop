@@ -20,16 +20,17 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from .Views import home, about_us, contact_us, login_page, register_page
+from .Views import home, about_us, contact_us, login_page, register_page, log_out
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include("products.urls"), name="products"),
-    path('', home),
-    path('about_us/', about_us),
-    path('contact_us/', contact_us),
-    path('login/', login_page),
-    path('register/', register_page),
+    path('products/', include("products.urls"), name="products"),
+    path('', home, name='home'),
+    path('about_us/', about_us, name='about'),
+    path('contact_us/', contact_us, name='contact'),
+    path('login/', login_page, name='login'),
+    path('register/', register_page, name='register'),
+    path('logout/', log_out, name='logout')
 ]
 
 if settings.DEBUG:

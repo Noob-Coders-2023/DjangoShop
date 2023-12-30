@@ -4,5 +4,6 @@
         <h5 class="card-title">{{ product.title }}</h5>
         <p class="card-text">{{ product.description | truncatewords:5 }}</p>
         <a href="{{ product.product_url }}" class="btn btn-primary">Show</a>
+        <a href="{% url 'products:detail' slug=product.slug %}" class="btn btn-danger">Show</a>
     </div>
 </div>

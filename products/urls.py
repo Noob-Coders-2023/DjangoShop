@@ -12,11 +12,11 @@ from .views import (products_view, ProductsView,
 app_name = "products"
 
 urlpatterns = [
-    path('products-fb', products_view),
-    path('products-cb', ProductsView.as_view()),
-    path('products-fb/<productID>', product_detail),
-    path('products-cb/<pk>', ProductDetailView.as_view()),
-    path('products-active', ProductsActiveList.as_view()),
-    path('products-active/<pk>', ProductsActiveDetail.as_view()),
-    path('product/<slug>', ProductShowWithSlug.as_view()),
+    path('', products_view),
+    path('<slug>', ProductShowWithSlug.as_view(), name='detail'),
+    # path('products-cb', ProductsView.as_view()),
+    # path('products-fb/<productID>', product_detail),
+    # path('products-cb/<pk>', ProductDetailView.as_view()),
+    # path('products-active', ProductsActiveList.as_view()),
+    # path('products-active/<pk>', ProductsActiveDetail.as_view()),
 ]

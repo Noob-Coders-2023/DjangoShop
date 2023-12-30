@@ -58,7 +58,8 @@ class Product(models.Model):
         return self.title
 
     def product_url(self):
-        return f"products-fb/{self.slug}"
+        return f"products/{self.slug}"
+
 
 def product_pre_save_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
