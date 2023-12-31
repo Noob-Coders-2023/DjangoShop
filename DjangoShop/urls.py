@@ -19,11 +19,14 @@ from django.contrib import admin
 from django.urls import path
 
 from DjangoShop import settings
-from .views import home
+from .views import home, header, footer, contact_us
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),
+    path('', home, name='home'),
+    path('header', header, name='header'),
+    path('footer', footer, name='footer'),
+    path('contact-us', contact_us, name='contact'),
 ]
 
 if settings.DEBUG:

@@ -1,5 +1,7 @@
-{% include 'base/header.html' %}
+{% load render_partial %}
+
+{% render_partial 'header' %}
 
 {% block contents %}{% endblock %}
 
-{% include 'base/footer.html' %}
+{% render_partial 'footer' %}
