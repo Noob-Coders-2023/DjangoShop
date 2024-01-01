@@ -1,0 +1,58 @@
+{% extends 'base/base.html' %}
+
+{% block contents %}
+
+    <div id="container">
+    <div class="container">
+      <!-- Breadcrumb Start-->
+      <ul class="breadcrumb">
+        <li><a href="index.html"><i class="fa fa-home"></i></a></li>
+        <li><a href="category.html">الکترونیکی</a></li>
+      </ul>
+      <!-- Breadcrumb End-->
+      <div class="row">
+        <!--Middle Part Start-->
+        <div id="content" class="col-sm-9">
+          <h1 class="title">لیست محصولات</h1>
+          <br>
+          <div class="row products-category">
+              {% for product in object_list %}
+                  <div class="product-layout product-grid col-lg-5ths col-md-5ths col-sm-3 col-xs-12">
+              <div class="product-thumb">
+                <div class="image"><a href="product.html"><img src="{{ product.image.url }}" alt=" {{ product.title }} " title=" {{ product.title }} " class="img-responsive"></a></div>
+                <div>
+                  <div class="caption">
+                    <h4><a href="product.html"> {{ product.title }} </a></h4>
+                    <p class="description">{{ product.description | truncatewords:10 }}</p>
+                    <p class="price"> <span class="price-new">98000 تومان</span> <span class="price-old">120000 تومان</span> <span class="saving">-26%</span> <span class="price-tax">بدون مالیات : 90000 تومان</span> </p>
+                  </div>
+                  <div class="button-group">
+                    <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
+                    <div class="add-to-links">
+                      <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
+                      <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+              {% endfor %}
+          </div>
+          <div class="row">
+            <div class="col-sm-6 text-left">
+              <ul class="pagination">
+                <li class="active"><span>1</span></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">&gt;</a></li>
+                <li><a href="#">&gt;|</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6 text-right">نمایش 1 تا 12 از 15 (مجموع 2 صفحه)</div>
+          </div>
+        </div>
+        <!--Middle Part End -->
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

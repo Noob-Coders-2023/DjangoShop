@@ -20,6 +20,7 @@ from django.urls import path
 
 from DjangoShop import settings
 from .views import home, header, footer, contact_us, login_page, register_page, logout_page
+from Products.views import ProductListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,6 +31,7 @@ urlpatterns = [
     path('login', login_page, name='login'),
     path('register', register_page, name='register'),
     path('logout', logout_page, name='logout'),
+    path('products', ProductListView.as_view(), name='products_list'),
 ]
 
 if settings.DEBUG:
