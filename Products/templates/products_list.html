@@ -16,13 +16,13 @@
           <h1 class="title">لیست محصولات</h1>
           <br>
           <div class="row products-category">
-              {% for product in object_list %}
+              {% for product in page_obj %}
                   <div class="product-layout product-grid col-lg-5ths col-md-5ths col-sm-3 col-xs-12">
               <div class="product-thumb">
-                <div class="image"><a href="product.html"><img src="{{ product.image.url }}" alt=" {{ product.title }} " title=" {{ product.title }} " class="img-responsive"></a></div>
+                <div class="image"><a href="{% url 'products:products_list' %}"><img src="{{ product.image.url }}" alt=" {{ product.title }} " title=" {{ product.title }} " class="img-responsive"></a></div>
                 <div>
                   <div class="caption">
-                    <h4><a href="product.html"> {{ product.title }} </a></h4>
+                    <h4><a href="{% url 'products:products_list' %}"> {{ product.title }} </a></h4>
                     <p class="description">{{ product.description | truncatewords:10 }}</p>
                     <p class="price"> <span class="price-new">98000 تومان</span> <span class="price-old">120000 تومان</span> <span class="saving">-26%</span> <span class="price-tax">بدون مالیات : 90000 تومان</span> </p>
                   </div>
@@ -41,10 +41,15 @@
           <div class="row">
             <div class="col-sm-6 text-left">
               <ul class="pagination">
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">&gt;</a></li>
-                <li><a href="#">&gt;|</a></li>
+                  {% if page_obj.has_previous %}
+                      <li><a href="?page={{ page_obj.previous_page_number }}">صفحه قبل</a></li>
+                  {% endif %}
+                  {% for page in paginator.range %}
+                      <li><a href="?page={{ page }}">{{ page }}</a></li>
+                  {% endfor %}
+                  {% if page_obj.has_next %}
+                      <li><a href="?page={{ page_obj.next_page_number }}">صفحه بعد</a></li>
+                   {% endif %}
               </ul>
             </div>
             <div class="col-sm-6 text-right">نمایش 1 تا 12 از 15 (مجموع 2 صفحه)</div>
