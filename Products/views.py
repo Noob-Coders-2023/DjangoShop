@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from .models import Product
@@ -11,3 +12,17 @@ class ProductListView(ListView):
 
     def get_queryset(self):
         return Product.objects.get_active_products()
+
+
+def product_detail(request, *args, **kwargs):
+    product_id = kwargs['product_id']
+    title = kwargs['title']
+
+    product = Product.objects.get_product_by_id(product_id)
+    if product is None:
+        raise Http404('محصول موردنظر یافت نشد.')
+
+    context = {
+        'product': product
+    }
+    return render(request, 'products_detail.html', context)
