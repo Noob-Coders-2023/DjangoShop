@@ -22,7 +22,7 @@ class ProductManager(models.Manager):
         return self.get_queryset().filter(active=True)
 
     def get_product_by_id(self, product_id):
-        qs = self.get_queryset().filter(id=product_id)
+        qs = self.get_queryset().filter(id=product_id, active=True)
         if qs.count() == 1:
             return qs.first()
         else:
@@ -45,3 +45,6 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_product_detail_url(self) :
+        return f"/products/{self.id}/{self.title.replace(' ', '-')}"

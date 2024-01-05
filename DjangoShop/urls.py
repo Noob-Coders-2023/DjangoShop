@@ -31,7 +31,7 @@ urlpatterns = [
     path('login', login_page, name='login'),
     path('register', register_page, name='register'),
     path('logout', logout_page, name='logout'),
-    path('', include('Products.urls'), name='products'),
+    path('', include('Products.urls', namespace='products')),
 ]
 
 if settings.DEBUG:
