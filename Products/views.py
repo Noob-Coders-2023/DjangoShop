@@ -26,3 +26,15 @@ def product_detail(request, *args, **kwargs):
         'product': product
     }
     return render(request, 'products_detail.html', context)
+
+
+class SearchProducts(ListView):
+    template_name = 'products_list.html'
+    paginate_by = 10
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        if query is not None:
+            return Product.objects.filter(title__icontains=query)
+
+        return Product.objects.get_active_products()

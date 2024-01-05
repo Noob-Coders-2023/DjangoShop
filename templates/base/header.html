@@ -7,7 +7,7 @@
 <meta name="format-detection" content="telephone=no" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href="{% static 'image/favicon.png' %}" rel="icon" />
-<title>مارکت شاپ - قالب HTML فروشگاهی</title>
+<title>آنلاین شاپ</title>
 <meta name="description" content="Responsive and clean html template design for any kind of ecommerce webshop">
 <!-- CSS Part Start-->
 <link rel="stylesheet" type="text/css" href="{% static 'js/bootstrap/css/bootstrap.min.css' %}" />
@@ -118,18 +118,12 @@
           </div>
           <!-- Mini Cart End-->
           <!-- جستجو Start-->
-{#            <div class="col-lg-8 col-md-5 col-sm-8 col-7">#}
-{#                <div class="search-area default">#}
-{#                    <form action="" class="search">#}
-{#                        <input type="text" placeholder="جستجو">#}
-{#                        <button type="submit"><img src="assets/img/search.png" alt=""></button>#}
-{#                    </form>#}
-{#                </div>#}
-{#            </div>#}
           <div class="col-table-cell col-lg-3 col-md-3 col-sm-6 col-xs-12 inner">
             <div id="search" class="input-group">
-              <input id="filter_name" type="text" name="search" value="" placeholder="جستجو" class="form-control input-lg" />
-              <button type="button" class="button-search"><i class="fa fa-search"></i></button>
+              <form action="products/search" method="get">
+                  <input id="filter_name" name="q" type="text" value="{{ request.GET.q }}" placeholder="جستجو" class="form-control input-lg" />
+                  <button type="button" class="button-search"><i class="fa fa-search"></i></button>
+              </form>
             </div>
           </div>
           <!-- جستجو End-->
