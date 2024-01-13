@@ -8,7 +8,7 @@ from .models import Product
 
 class ProductListView(ListView):
     template_name = 'products_list.html'
-    paginate_by = 1
+    paginate_by = 2
 
     def get_queryset(self):
         return Product.objects.get_active_products()
@@ -35,6 +35,6 @@ class SearchProducts(ListView):
     def get_queryset(self):
         query = self.request.GET.get('q')
         if query is not None:
-            return Product.objects.filter(title__icontains=query)
+            return Product.objects.search_products(query)
 
         return Product.objects.get_active_products()

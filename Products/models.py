@@ -1,6 +1,8 @@
-import random
-from django.db import models
 import os
+import random
+
+from django.db import models
+from django.db.models import Q
 
 
 # Create your models here.
@@ -28,6 +30,10 @@ class ProductManager(models.Manager):
         else:
             return None
 
+    def search_products(self, query):
+        lookup = Q(title__icontains=query) | Q(description__icontains=query)
+        return self.get_queryset().filter(lookup, active=True).distinct()
+
 
 class Product(models.Model):
     title = models.CharField(max_length=150, verbose_name='عنوان محصول')
@@ -46,5 +52,5 @@ class Product(models.Model):
     def __str__(self):
         return self.title
 
-    def get_product_detail_url(self) :
+    def get_product_detail_url(self):
         return f"/products/{self.id}/{self.title.replace(' ', '-')}"
