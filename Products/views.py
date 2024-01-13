@@ -1,6 +1,8 @@
 from django.http import Http404
 from django.shortcuts import render
 from django.views.generic.list import ListView
+
+from Tags.models import Tag
 from .models import Product
 
 
@@ -25,6 +27,12 @@ def product_detail(request, *args, **kwargs):
     context = {
         'product': product
     }
+
+    tag = Tag.objects.first()
+    # print(tag)
+    # print(tag.products.all())
+    # print(product.tag_set.all())
+
     return render(request, 'products_detail.html', context)
 
 

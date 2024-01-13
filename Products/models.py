@@ -2,6 +2,7 @@ import os
 import random
 
 from django.db import models
+from django.contrib.auth.models import User
 from django.db.models import Q
 
 
@@ -31,7 +32,11 @@ class ProductManager(models.Manager):
             return None
 
     def search_products(self, query):
-        lookup = Q(title__icontains=query) | Q(description__icontains=query)
+        lookup = (
+                Q(title__icontains=query) |
+                Q(description__icontains=query) |
+                Q(tag__title__icontains=query)
+        )
         return self.get_queryset().filter(lookup, active=True).distinct()
 
 
@@ -40,6 +45,7 @@ class Product(models.Model):
     description = models.TextField(verbose_name='توضیحات')
     price = models.DecimalField(max_digits=15, decimal_places=2, verbose_name='قیمت')
     image = models.ImageField(upload_to=upload_image, null=True, blank=True, verbose_name='تصویر')
+    additional_images = models.ManyToManyField('ProductImage', related_name='products', verbose_name='تصاویر گالری', blank=True)
     active = models.BooleanField(default=False, verbose_name='فعال/غیرفعال')
     time = models.DateTimeField(auto_now_add=True, )
 
@@ -54,3 +60,8 @@ class Product(models.Model):
 
     def get_product_detail_url(self):
         return f"/products/{self.id}/{self.title.replace(' ', '-')}"
+
+
+class ProductImage(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='product_images')
+    image = models.ImageField(upload_to='product_images/')
