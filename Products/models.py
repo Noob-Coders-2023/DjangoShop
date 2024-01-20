@@ -5,6 +5,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import Q
 
+from Category.models import Category
+
 
 # Create your models here.
 def get_file_extension(file):
@@ -48,6 +50,7 @@ class Product(models.Model):
     additional_images = models.ManyToManyField('ProductImage', related_name='products', verbose_name='تصاویر گالری', blank=True)
     active = models.BooleanField(default=False, verbose_name='فعال/غیرفعال')
     time = models.DateTimeField(auto_now_add=True, )
+    categories = models.ManyToManyField(Category, verbose_name='دسته بندی' , blank=True)
 
     objects = ProductManager()
 

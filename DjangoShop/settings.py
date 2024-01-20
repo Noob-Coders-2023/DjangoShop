@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django_render_partial',
     'Products',
     'Tags',
+    'Category',
 ]
 
 MIDDLEWARE = [

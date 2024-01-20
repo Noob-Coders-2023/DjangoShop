@@ -9,14 +9,13 @@ from .utils import unique_slug_generator
 
 class Tag(models.Model):
     title = models.CharField(max_length=100, verbose_name='عنوان')
-    slug = models.SlugField(verbose_name='عنوان در آدرس URL', unique=True)
+    slug = models.SlugField(verbose_name='عنوان در آدرس URL', blank=True, unique=True)
     active = models.BooleanField(default=True, verbose_name='فعال/غیرفعال')
     time = models.DateTimeField(auto_now_add=True)
     products = models.ManyToManyField(Product, blank=True, verbose_name='محصولات')
 
     def __str__(self):
         return self.title
-
 
     class Meta:
         verbose_name = 'برچسب / تگ'
