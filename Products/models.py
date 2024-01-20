@@ -4,6 +4,7 @@ import random
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import Q
+from django.utils.formats import number_format
 
 from Category.models import Category
 
@@ -19,7 +20,7 @@ def upload_image(instance, filename):
     rand_name = random.randint(1, 999999999)
     name, ext = get_file_extension(filename)
     final_name = f"{instance.id}-{rand_name}{ext}"
-    return f"products/{filename}"
+    return f"products/{final_name}"
 
 
 class ProductManager(models.Manager):
@@ -45,7 +46,7 @@ class ProductManager(models.Manager):
 class Product(models.Model):
     title = models.CharField(max_length=150, verbose_name='عنوان محصول')
     description = models.TextField(verbose_name='توضیحات')
-    price = models.DecimalField(max_digits=15, decimal_places=2, verbose_name='قیمت')
+    price = models.IntegerField(verbose_name='قیمت')
     image = models.ImageField(upload_to=upload_image, null=True, blank=True, verbose_name='تصویر')
     additional_images = models.ManyToManyField('ProductImage', related_name='products', verbose_name='تصاویر گالری', blank=True)
     active = models.BooleanField(default=False, verbose_name='فعال/غیرفعال')

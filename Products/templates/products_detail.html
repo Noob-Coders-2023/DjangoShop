@@ -1,4 +1,5 @@
 {% extends 'base/base.html' %}
+{% load humanize %}
 {% load static %}
 {% block contents %}
 
@@ -29,12 +30,12 @@
             <h1 class="title" itemprop="name">{{ product.title }}</h1>
             <div class="row product-info">
               <div class="col-sm-6">
-                <div class="image"><div style="height:350px;width:350px;" class="zoomWrapper"><img class="img-responsive" itemprop="image" id="zoom_01" src="{{ product.image.url }}" title="{{ product.title }}" alt="{{ product.title }}" data-zoom-image="{{ product.image.url }}" style="position: absolute;"></div> </div>
+                <div class="image"><div style="height:350px;width:350px;" class="zoomWrapper"><img class="img-responsive" itemprop="image" id="zoom_01" src="{{ product.image.url }}" title="{{ product.title }}" alt="{{ product.title }}" data-zoom-image="{{ product.image.url }}" style="position: absolute; object-fit: contain; width: 100%; height: 100%;"></div> </div>
                 <div class="center-block text-center"><span class="zoom-gallery"><i class="fa fa-search"></i> برای مشاهده گالری روی تصویر کلیک کنید</span></div>
                 <div class="image-additional" id="gallery_01">
                     {% for image in product.product_images.all %}
                         <a class="thumbnail" href="{{ image.image.url }}" data-lightbox="product-gallery" data-image="{{ image.image.url }}" title="{{ product.title }}">
-                            <img src="{{ image.image.url }}" title="{{ product.title }}" alt="{{ product.title }}"></a>
+                            <img class="img-responsive" style="height: 100px; width: 100px; object-fit: contain;" src="{{ image.image.url }}" title="{{ product.title }}" alt="{{ product.title }}"></a>
                     {% endfor %}
                 </div>
               </div>
@@ -47,7 +48,7 @@
                 </ul>
                 <ul class="price-box">
                   <li class="price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                      <span class="price">{{ product.price }} تومان</span>
+                      <span class="price">{{ product.price|intcomma }} تومان</span>
 {#                      <span itemprop="price">10 میلیون تومان<span itemprop="availability" content="موجود"></span></span>#}
                   </li>
                   <li></li>
