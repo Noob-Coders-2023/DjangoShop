@@ -2,6 +2,7 @@ from django.http import Http404
 from django.shortcuts import render
 from django.views.generic.list import ListView
 
+from Category.models import Category
 from Tags.models import Tag
 from .models import Product
 
@@ -15,6 +16,29 @@ class ProductListView(ListView):
     def get_queryset(self):
         return Product.objects.get_active_products()
 
+
+class ProductCategoru:
+    pass
+
+
+class ProductListByCategory(ListView):
+    template_name = 'products_list.html'
+    paginate_by = 5
+
+    def get_queryset(self):
+        category_name = self.kwargs['category_name']
+        categories = Category.objects.filter(name__iexact=category_name)
+        if categories is None:
+            raise Http404('صفحه مورد نظر یافت نشد.')
+
+        return Product.objects.get_products_by_category(category_name)
+
+def product_categories_partial(request):
+    categories = Category.objects.all()
+    context = {
+        'categories': categories
+    }
+    return render(request, 'categories_view_partial.html', context)
 
 def product_detail(request, *args, **kwargs):
     product_id = kwargs['product_id']

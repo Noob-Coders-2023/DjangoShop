@@ -1,4 +1,5 @@
 {% extends 'base/base.html' %}
+{% load render_partial %}
 {% load humanize %}
 {% load static %}
 {% block contents %}
@@ -369,6 +370,8 @@
               </div>
             </div>
           </div>
+
+        {% render_partial 'product_categories_partial' %}
         </aside>
         <!--Right Part End -->
       </div>

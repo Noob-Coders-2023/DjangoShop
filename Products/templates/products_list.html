@@ -1,15 +1,10 @@
 {% extends 'base/base.html' %}
+{% load render_partial %}
 
 {% block contents %}
 
   <div id="container">
     <div class="container">
-      <!-- Breadcrumb Start-->
-      <ul class="breadcrumb">
-        <li><a href="index.html"><i class="fa fa-home"></i></a></li>
-        <li><a href="category.html">الکترونیکی</a></li>
-      </ul>
-      <!-- Breadcrumb End-->
       <div class="row">
         <!--Middle Part Start-->
         <div id="content" class="col-sm-9">
@@ -41,6 +36,14 @@
           </div>
         </div>
         <!--Middle Part End -->
+
+        <!--Right Part Start -->
+        <aside id="column-right" class="col-sm-3 hidden-xs">
+            {% render_partial 'product_categories_partial' %}
+        </aside>
+        <!--Right Part End -->
+
+
       </div>
     </div>
   </div>
