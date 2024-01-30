@@ -1,6 +1,7 @@
 from django.contrib.auth import authenticate, login, get_user_model, logout
 from django.shortcuts import render, redirect
 from .forms import LoginForm, RegisterForm
+from Sliders.models import Slider
 
 
 def header(request):
@@ -16,7 +17,10 @@ def footer(request):
 
 
 def home(request):
-    context = {}
+    sliders = Slider.objects.filter(active=True)
+    context = {
+        'sliders': sliders
+    }
     return render(request, 'home.html', context)
 
 
