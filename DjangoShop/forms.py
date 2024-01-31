@@ -35,7 +35,7 @@ class RegisterForm(forms.Form):
         query = User.objects.filter(username=username)
 
         if query.exists():
-            raise forms.ValidationError('This username is already taken.')
+            raise forms.ValidationError('نام کاربری تکراری است.')
         return username
 
     def clean_email(self):
@@ -43,7 +43,7 @@ class RegisterForm(forms.Form):
         query = User.objects.filter(email=email)
 
         if query.exists():
-            raise forms.ValidationError('This email is already registered.')
+            raise forms.ValidationError('این ایمیل قبلا ثبت شده است.')
         return email
 
     def clean(self):
@@ -51,5 +51,5 @@ class RegisterForm(forms.Form):
         password = self.cleaned_data.get('password')
         password2 = self.cleaned_data.get('password2')
         if password != password2:
-            raise forms.ValidationError('Passwords do not match.')
+            raise forms.ValidationError('رمزهای ورود مطابقت ندارند.')
         return data
