@@ -19,8 +19,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 from DjangoShop import settings
-from .views import home, header, footer, contact_us, login_page, register_page, logout_page
+from .views import home, header, footer, login_page, register_page, logout_page
 from Products.views import ProductListView, product_categories_partial
+from Contact.views import contact_us
 
 urlpatterns = [
     path('admin/', admin.site.urls),

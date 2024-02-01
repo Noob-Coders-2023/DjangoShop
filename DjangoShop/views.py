@@ -24,11 +24,6 @@ def home(request):
     return render(request, 'home.html', context)
 
 
-def contact_us(request):
-    context = {}
-    return render(request, 'contact_us.html', context)
-
-
 # AUTH section
 
 def login_page(request):
