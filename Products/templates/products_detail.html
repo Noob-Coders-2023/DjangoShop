@@ -34,11 +34,20 @@
                 <div class="image"><div style="height:350px;width:350px;" class="zoomWrapper"><img class="img-responsive" itemprop="image" id="zoom_01" src="{{ product.image.url }}" title="{{ product.title }}" alt="{{ product.title }}" data-zoom-image="{{ product.image.url }}" style="position: absolute; object-fit: contain; width: 100%; height: 100%;"></div> </div>
                 <div class="center-block text-center"><span class="zoom-gallery"><i class="fa fa-search"></i> برای مشاهده گالری روی تصویر کلیک کنید</span></div>
                 <div class="image-additional" id="gallery_01">
-                    {% for image in product.product_images.all %}
-                        <a class="thumbnail" href="{{ image.image.url }}" data-lightbox="product-gallery" data-image="{{ image.image.url }}" title="{{ product.title }}">
-                            <img class="img-responsive" style="height: 100px; width: 100px; object-fit: contain;" src="{{ image.image.url }}" title="{{ product.title }}" alt="{{ product.title }}"></a>
+                    {% for image_gallery in gallery %}
+                        <a class="thumbnail" href="{{ image_gallery.image.url }}" data-lightbox="product-gallery" data-image="{{ image_gallery.image.url }}" title="{{ image_gallery.title }}">
+                            <img class="img-responsive" style="height: 100px; width: 100px; object-fit: contain;" src="{{ image_gallery.image.url }}" title="{{ image_gallery.title }}" alt="{{ image_gallery.title }}"></a>
                     {% endfor %}
                 </div>
+
+
+
+{#                <div class="image-additional" id="gallery_01">#}
+{#                    {% for image in product.product_images.all %}#}
+{#                        <a class="thumbnail" href="{{ image.image.url }}" data-lightbox="product-gallery" data-image="{{ image.image.url }}" title="{{ product.title }}">#}
+{#                            <img class="img-responsive" style="height: 100px; width: 100px; object-fit: contain;" src="{{ image.image.url }}" title="{{ product.title }}" alt="{{ product.title }}"></a>#}
+{#                    {% endfor %}#}
+{#                </div>#}
               </div>
               <div class="col-sm-6">
                 <ul class="list-unstyled description">

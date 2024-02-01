@@ -4,7 +4,7 @@ from django.views.generic.list import ListView
 
 from Category.models import Category
 from Tags.models import Tag
-from .models import Product
+from .models import Product, ProductGallery
 
 
 # Create your views here.
@@ -33,6 +33,7 @@ class ProductListByCategory(ListView):
 
         return Product.objects.get_products_by_category(category_name)
 
+
 def product_categories_partial(request):
     categories = Category.objects.all()
     context = {
@@ -40,16 +41,20 @@ def product_categories_partial(request):
     }
     return render(request, 'categories_view_partial.html', context)
 
+
 def product_detail(request, *args, **kwargs):
-    product_id = kwargs['product_id']
+    get_product_id = kwargs['product_id']
     title = kwargs['title']
 
-    product = Product.objects.get_product_by_id(product_id)
+    product = Product.objects.get_product_by_id(get_product_id)
     if product is None:
         raise Http404('محصول موردنظر یافت نشد.')
 
+    gallery = ProductGallery.objects.filter(product_id=get_product_id)
+
     context = {
-        'product': product
+        'product': product,
+        'gallery': gallery
     }
 
     tag = Tag.objects.first()
