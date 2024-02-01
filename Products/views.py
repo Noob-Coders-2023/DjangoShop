@@ -51,10 +51,12 @@ def product_detail(request, *args, **kwargs):
         raise Http404('محصول موردنظر یافت نشد.')
 
     gallery = ProductGallery.objects.filter(product_id=get_product_id)
+    related_products = Product.objects.get_queryset().filter(categories__product=product).distinct()
 
     context = {
         'product': product,
-        'gallery': gallery
+        'gallery': gallery,
+        'related_products': related_products,
     }
 
     tag = Tag.objects.first()
