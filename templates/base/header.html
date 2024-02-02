@@ -33,8 +33,8 @@
           <div class="pull-left flip left-top">
             <div class="links">
               <ul>
-                <li class="mobile"><i class="fa fa-phone"></i>0000000000 077+</li>
-                <li class="email"><a href="mailto:info@marketshop.com"><i class="fa fa-envelope"></i>info@marketshop.com</a></li>
+                <li class="mobile"><i class="fa fa-phone"></i>{{ setting.phone }}</li>
+                <li class="email"><a href="mailto:{{ setting.email }}"><i class="fa fa-envelope"></i>{{ setting.email }}</a></li>
                 <li><a href="checkout.html">تسویه حساب</a></li>
               </ul>
             </div>
@@ -59,7 +59,7 @@
         <div class="table-container">
           <!-- Logo Start -->
           <div class="col-table-cell col-lg-6 col-md-6 col-sm-12 col-xs-12 inner">
-            <div id="logo"><a href="{% url 'home' %}"><img class="img-responsive" src="{% static 'image/logo.png' %}" title="MarketShop" alt="MarketShop" /></a></div>
+            <div id="logo"><a href="{% url 'home' %}"><img class="img-responsive" src="{{ setting.logo.url }}" title="MarketShop" alt="MarketShop" /></a></div>
           </div>
           <!-- Logo End -->
           <!-- Mini Cart Start-->

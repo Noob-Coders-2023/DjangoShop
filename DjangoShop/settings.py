@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'Category',
     'Sliders',
     'Contact',
+    'Settings',
 ]
 
 MIDDLEWARE = [

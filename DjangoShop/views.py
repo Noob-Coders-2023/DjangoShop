@@ -2,17 +2,23 @@ from django.contrib.auth import authenticate, login, get_user_model, logout
 from django.shortcuts import render, redirect
 from .forms import LoginForm, RegisterForm
 from Sliders.models import Slider
+from Settings.models import Settings
 
 
 def header(request):
+    setting = Settings.objects.first()
     context = {
-        'menu_item': 'منوی سفارشی از رندر پارشیال'
+        'menu_item': 'منوی سفارشی از رندر پارشیال',
+        'setting': setting
     }
     return render(request, 'base/header.html', context)
 
 
 def footer(request):
-    context = {}
+    setting = Settings.objects.first()
+    context = {
+        'setting': setting
+    }
     return render(request, 'base/footer.html', context)
 
 
