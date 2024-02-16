@@ -20,10 +20,10 @@ class Order(models.Model):
 
 
 class OrderDetail(models.Model):
-    order = models.ForeignKey(Order, on_delete=models.CASCADE, verbose_name="سفارش")
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name="محصول")
-    count = models.IntegerField(default=0, verbose_name="تعداد")
-    price = models.IntegerField(default=0, verbose_name="قیمت")
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    count = models.IntegerField()
+    price = models.IntegerField()
 
     class Meta:
         verbose_name = "جزئیات سبد خرید"

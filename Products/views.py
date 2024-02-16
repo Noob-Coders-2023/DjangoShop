@@ -5,6 +5,7 @@ from django.views.generic.list import ListView
 from Category.models import Category
 from Tags.models import Tag
 from .models import Product, ProductGallery
+from Orders.forms import UserNewOrderForm
 
 
 # Create your views here.
@@ -17,7 +18,7 @@ class ProductListView(ListView):
         return Product.objects.get_active_products()
 
 
-class ProductCategoru:
+class ProductCategory:
     pass
 
 
@@ -44,6 +45,7 @@ def product_categories_partial(request):
 
 def product_detail(request, *args, **kwargs):
     get_product_id = kwargs['product_id']
+    new_order_form = UserNewOrderForm(request.POST or None, initial=({'product_id': get_product_id}))
     title = kwargs['title']
 
     product = Product.objects.get_product_by_id(get_product_id)
@@ -57,6 +59,7 @@ def product_detail(request, *args, **kwargs):
         'product': product,
         'gallery': gallery,
         'related_products': related_products,
+        'new_order_form': new_order_form
     }
 
     tag = Tag.objects.first()

@@ -76,16 +76,20 @@
                     </select>
                   </div>
                   <div class="cart">
-                    <div>
-                      <div class="qty">
-                        <label class="control-label" for="input-quantity">تعداد</label>
-                        <input type="text" name="quantity" value="1" size="2" id="input-quantity" class="form-control">
-                        <a class="qtyBtn plus" href="javascript:void(0);">+</a><br>
-                        <a class="qtyBtn mines" href="javascript:void(0);">-</a>
-                        <div class="clear"></div>
+                      <div>
+                      <form action="/add-new-order" method="post">
+                          {% csrf_token %}
+                          <div class="qty">
+                              {{ new_order_form.product_id }}
+                              <label class="control-label" for="input-quantity">تعداد</label>
+                                {{ new_order_form.count }}
+                              <a class="qtyBtn plus" href="javascript:void(0);">+</a><br>
+                              <a class="qtyBtn mines" href="javascript:void(0);">-</a>
+                              <div class="clear"></div>
+                          </div>
+                          <button type="submit" id="button-cart" class="btn btn-primary btn-lg">افزودن به سبد خرید</button>
+                      </form>
                       </div>
-                      <button type="button" id="button-cart" class="btn btn-primary btn-lg">افزودن به سبد</button>
-                    </div>
                     <div>
                       <button type="button" class="wishlist" onclick=""><i class="fa fa-heart"></i> افزودن به علاقه مندی ها</button>
                       <br>
