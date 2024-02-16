@@ -33,6 +33,7 @@ urlpatterns = [
     path('register', register_page, name='register'),
     path('logout', logout_page, name='logout'),
     path('', include('Products.urls', namespace='products')),
+    path('', include('Orders.urls', namespace='orders')),
     path('product_categories_partial', product_categories_partial, name='product_categories_partial')
 ]
 
