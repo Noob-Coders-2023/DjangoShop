@@ -23,3 +23,17 @@ def add_new_order(request):
             count = 1
         order.orderdetail_set.create(product_id=product.id, count=count, price=product.price)
         return redirect(f'/products/{product.id}/{product.title.replace(" ", "-")}')
+
+
+def cart(request):
+    context = {
+        'order': None,
+        'details': None,
+    }
+
+    open_order: Order = Order.objects.filter(user_id=request.user.id, paid=False).first()
+    if open_order is not None:
+        context['order'] = open_order
+        context['details'] = open_order.orderdetail_set.all()
+
+    return render(request, 'cart.html', context)
