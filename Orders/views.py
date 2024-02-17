@@ -1,8 +1,9 @@
+from django.http import Http404
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
 from Orders.forms import UserNewOrderForm
-from Orders.models import Order
+from Orders.models import Order, OrderDetail
 from Products.models import Product
 
 # ZarinPal
@@ -44,6 +45,16 @@ def cart(request):
         context['total_price'] = open_order.get_total_price()
 
     return render(request, 'cart.html', context)
+
+
+@login_required(login_url='/login')
+def remove_order(request, *args, **kwargs):
+    detail_id = kwargs['detail_id']
+    order_detail = OrderDetail.objects.get_queryset().get(id=detail_id, order_user_id=request.user.id)
+    if order_detail is not None:
+        order_detail.delete()
+        return redirect('/cart')
+    raise Http404()
 
 
 # Zarinpal Codes

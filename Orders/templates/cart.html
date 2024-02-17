@@ -43,6 +43,10 @@
                                 <input type="text" name="quantity" value="{{ detail.count }}" size="1" class="form-control" />
                                 <span class="input-group-btn">
 {#                                <button type="submit" data-toggle="tooltip" title="بروزرسانی" class="btn btn-primary"><i class="fa fa-refresh"></i></button>#}
+
+                                <div class="pull-right">
+                                    <a href="/remove-order/{{ detail.id }}" class="btn btn-danger">حذف</a>
+                                </div>
 {#                                <button type="button" data-toggle="tooltip" title="حذف" class="btn btn-danger" onClick=""><i class="fa fa-times-circle"></i></button>#}
                                 </span></div></td>
                             <td class="text-right">{{ detail.product.price }} تومان</td>
