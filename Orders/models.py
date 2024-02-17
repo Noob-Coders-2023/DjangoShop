@@ -18,6 +18,12 @@ class Order(models.Model):
     def __str__(self):
         return self.user.get_full_name()
 
+    def get_total_price(self):
+        amount = 0
+        for detail in self.orderdetail_set.all():
+            amount += detail.price * detail.count
+        return amount
+
 
 class OrderDetail(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
@@ -31,7 +37,6 @@ class OrderDetail(models.Model):
 
     def __str__(self):
         return self.product.title
-
 
     def product_sum_total(self):
         return self.price * self.count
