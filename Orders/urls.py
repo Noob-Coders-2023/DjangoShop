@@ -7,7 +7,7 @@ app_name = 'orders'
 
 urlpatterns = [
     path('add-new-order', add_new_order),
-    path('cart', cart),
+    path('cart', cart, name='cart'),
     path('remove-order/<detail_id>', remove_order),
     # path('request/', send_request, name='request'),
     # path('verify/<order_id>', verify, name='verify'),

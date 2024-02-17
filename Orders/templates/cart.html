@@ -20,11 +20,11 @@
                     <thead>
                       <tr>
                         <td class="text-center">تصویر</td>
-                        <td class="text-left">نام محصول</td>
-                        <td class="text-left">کد محصول</td>
-                        <td class="text-left">تعداد</td>
-                        <td class="text-right">قیمت واحد</td>
-                        <td class="text-right">کل</td>
+                        <td class="text-center">نام محصول</td>
+                        <td class="text-center">کد محصول</td>
+                        <td class="text-center">تعداد</td>
+                        <td class="text-center">قیمت واحد</td>
+                        <td class="text-center">کل</td>
                       </tr>
                     </thead>
                     <tbody>
@@ -35,28 +35,30 @@
                                     <img src="{{ detail.product.image.url }}" alt="{{ detail.product.title }}" title="{{ detail.product.title }}" style="height: 100px;" class="img-thumbnail" />
                                 </a>
                             </td>
-                            <td class="text-left"><a href="product.html">{{ detail.product.title }}</a><br />
+                            <td class="text-center"><a href="product.html">{{ detail.product.title }}</a><br />
 {#                              <small>{{ detail.product.title }}</small></td>#}
-                            <td class="text-left">{{ detail.product.id }}</td>
-                            <td class="text-left"><div class="input-group btn-block quantity">
+                            <td class="text-center">{{ detail.product.id }}</td>
+                            <td class="text-center"><div class="input-group btn-block quantity">
 {#                                <span>{{ detail.count }}</span>#}
                                 <input type="text" name="quantity" value="{{ detail.count }}" size="1" class="form-control" />
                                 <span class="input-group-btn">
 {#                                <button type="submit" data-toggle="tooltip" title="بروزرسانی" class="btn btn-primary"><i class="fa fa-refresh"></i></button>#}
 
-                                <div class="pull-right">
+                                <div class="pull-right" class="text-center">
                                     <a href="/remove-order/{{ detail.id }}" class="btn btn-danger">حذف</a>
                                 </div>
 {#                                <button type="button" data-toggle="tooltip" title="حذف" class="btn btn-danger" onClick=""><i class="fa fa-times-circle"></i></button>#}
                                 </span></div></td>
-                            <td class="text-right">{{ detail.product.price }} تومان</td>
-                            <td class="text-right">{{ detail.product_sum_total }} تومان</td>
+                            <td class="text-center">{{ detail.product.price }} تومان</td>
+                            <td class="text-center">{{ detail.product_sum_total }} تومان</td>
                           </tr>
                         {% endfor %}
                     </tbody>
                     </table>
                 {% else %}
+                    <br>
                     <p>هیچ محصولی در سبد خرید یافت نشد!</p>
+                    <br>
                 {% endif %}
             </div>
 {#          <h2 class="subtitle">حالا مایلید چه کاری انجام دهید؟</h2>#}
@@ -80,7 +82,7 @@
             </div>
           </div>
           <div class="buttons">
-            <div class="pull-left"><a href="{% url 'home' %}" class="btn btn-default">ادامه خرید</a></div>
+            <div class="pull-left"><a href="products" class="btn btn-default">ادامه خرید</a></div>
             <div class="pull-right"><a href="checkout.html" class="btn btn-primary">تسویه حساب</a></div>
           </div>
         </div>
