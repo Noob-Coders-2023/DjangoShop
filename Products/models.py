@@ -63,6 +63,9 @@ class Product(models.Model):
     active = models.BooleanField(default=False, verbose_name='فعال/غیرفعال')
     time = models.DateTimeField(auto_now_add=True, )
     categories = models.ManyToManyField(Category, verbose_name='دسته بندی', blank=True)
+    featured = models.BooleanField(default=False, verbose_name='محصول ویژه')
+    visits = models.IntegerField(default=0, verbose_name='تعداد مشاهده')
+
 
     objects = ProductManager()
 

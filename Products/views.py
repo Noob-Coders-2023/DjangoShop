@@ -52,6 +52,9 @@ def product_detail(request, *args, **kwargs):
     if product is None:
         raise Http404('محصول موردنظر یافت نشد.')
 
+    product.visits += 1
+    product.save()
+
     gallery = ProductGallery.objects.filter(product_id=get_product_id)
     related_products = Product.objects.get_queryset().filter(categories__product=product).distinct()
 

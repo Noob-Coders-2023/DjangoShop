@@ -13,7 +13,7 @@ from .models import Product, ProductGallery
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['__str__', 'title', 'price', 'active']
+    list_display = ['__str__', 'title', 'price', 'active', 'featured']
     # inlines = [ProductImageInline]
 
 

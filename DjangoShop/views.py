@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from .forms import LoginForm, RegisterForm
 from Sliders.models import Slider
 from Settings.models import Settings
+from Products.models import Product
 
 
 def header(request):
@@ -23,9 +24,15 @@ def footer(request):
 
 
 def home(request):
+    featured_products = Product.objects.filter(featured=True)
+    most_viewed_products = Product.objects.order_by('-visits').all()[:5]
+    latest_products = Product.objects.order_by('-id').all()[:5]
     sliders = Slider.objects.filter(active=True)
     context = {
-        'sliders': sliders
+        'sliders': sliders,
+        'featured_products': featured_products,
+        'most_viewed_products': most_viewed_products,
+        'latest_products': latest_products,
     }
     return render(request, 'home.html', context)
 

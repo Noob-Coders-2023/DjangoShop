@@ -64,58 +64,58 @@
           <!-- Logo End -->
           <!-- Mini Cart Start-->
           <div class="col-table-cell col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div id="cart">
-              <button type="button" data-toggle="dropdown" data-loading-text="Loading..." class="heading dropdown-toggle">
-              <span class="cart-icon pull-left flip"></span>
-              <span id="cart-total">2 آیتم - 132000 تومان</span></button>
-              <ul class="dropdown-menu">
-                <li>
-                  <table class="table">
-                    <tbody>
-                      <tr>
-                        <td class="text-center"><a href="{% url 'products:products_list' %}"><img class="img-thumbnail" title="کفش راحتی مردانه" alt="کفش راحتی مردانه" src="{% static 'image/product/sony_vaio_1-50x50.jpg' %}"></a></td>
-                        <td class="text-left"><a href="{% url 'products:products_list' %}">کفش راحتی مردانه</a></td>
-                        <td class="text-right">x 1</td>
-                        <td class="text-right">32000 تومان</td>
-                        <td class="text-center"><button class="btn btn-danger btn-xs remove" title="حذف" onClick="" type="button"><i class="fa fa-times"></i></button></td>
-                      </tr>
-                      <tr>
-                        <td class="text-center"><a href="{% url 'products:products_list' %}"><img class="img-thumbnail" title="تبلت ایسر" alt="تبلت ایسر" src="{% static 'image/product/samsung_tab_1-50x50.jpg' %}"></a></td>
-                        <td class="text-left"><a href="{% url 'products:products_list' %}">تبلت ایسر</a></td>
-                        <td class="text-right">x 1</td>
-                        <td class="text-right">98000 تومان</td>
-                        <td class="text-center"><button class="btn btn-danger btn-xs remove" title="حذف" onClick="" type="button"><i class="fa fa-times"></i></button></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </li>
-                <li>
-                  <div>
-                    <table class="table table-bordered">
-                      <tbody>
-                        <tr>
-                          <td class="text-right"><strong>جمع کل</strong></td>
-                          <td class="text-right">132000 تومان</td>
-                        </tr>
-                        <tr>
-                          <td class="text-right"><strong>کسر هدیه</strong></td>
-                          <td class="text-right">4000 تومان</td>
-                        </tr>
-                        <tr>
-                          <td class="text-right"><strong>مالیات</strong></td>
-                          <td class="text-right">11880 تومان</td>
-                        </tr>
-                        <tr>
-                          <td class="text-right"><strong>قابل پرداخت</strong></td>
-                          <td class="text-right">139880 تومان</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <p class="checkout"><a href="cart.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> مشاهده سبد</a>&nbsp;&nbsp;&nbsp;<a href="checkout.html" class="btn btn-primary"><i class="fa fa-share"></i> تسویه حساب</a></p>
-                  </div>
-                </li>
-              </ul>
-            </div>
+{#            <div id="cart">#}
+{#              <button type="button" data-toggle="dropdown" data-loading-text="Loading..." class="heading dropdown-toggle">#}
+{#              <span class="cart-icon pull-left flip"></span>#}
+{#              <span id="cart-total">2 آیتم - 132000 تومان</span></button>#}
+{#              <ul class="dropdown-menu">#}
+{#                <li>#}
+{#                  <table class="table">#}
+{#                    <tbody>#}
+{#                      <tr>#}
+{#                        <td class="text-center"><a href="{% url 'products:products_list' %}"><img class="img-thumbnail" title="کفش راحتی مردانه" alt="کفش راحتی مردانه" src="{% static 'image/product/sony_vaio_1-50x50.jpg' %}"></a></td>#}
+{#                        <td class="text-left"><a href="{% url 'products:products_list' %}">کفش راحتی مردانه</a></td>#}
+{#                        <td class="text-right">x 1</td>#}
+{#                        <td class="text-right">32000 تومان</td>#}
+{#                        <td class="text-center"><button class="btn btn-danger btn-xs remove" title="حذف" onClick="" type="button"><i class="fa fa-times"></i></button></td>#}
+{#                      </tr>#}
+{#                      <tr>#}
+{#                        <td class="text-center"><a href="{% url 'products:products_list' %}"><img class="img-thumbnail" title="تبلت ایسر" alt="تبلت ایسر" src="{% static 'image/product/samsung_tab_1-50x50.jpg' %}"></a></td>#}
+{#                        <td class="text-left"><a href="{% url 'products:products_list' %}">تبلت ایسر</a></td>#}
+{#                        <td class="text-right">x 1</td>#}
+{#                        <td class="text-right">98000 تومان</td>#}
+{#                        <td class="text-center"><button class="btn btn-danger btn-xs remove" title="حذف" onClick="" type="button"><i class="fa fa-times"></i></button></td>#}
+{#                      </tr>#}
+{#                    </tbody>#}
+{#                  </table>#}
+{#                </li>#}
+{#                <li>#}
+{#                  <div>#}
+{#                    <table class="table table-bordered">#}
+{#                      <tbody>#}
+{#                        <tr>#}
+{#                          <td class="text-right"><strong>جمع کل</strong></td>#}
+{#                          <td class="text-right">132000 تومان</td>#}
+{#                        </tr>#}
+{#                        <tr>#}
+{#                          <td class="text-right"><strong>کسر هدیه</strong></td>#}
+{#                          <td class="text-right">4000 تومان</td>#}
+{#                        </tr>#}
+{#                        <tr>#}
+{#                          <td class="text-right"><strong>مالیات</strong></td>#}
+{#                          <td class="text-right">11880 تومان</td>#}
+{#                        </tr>#}
+{#                        <tr>#}
+{#                          <td class="text-right"><strong>قابل پرداخت</strong></td>#}
+{#                          <td class="text-right">139880 تومان</td>#}
+{#                        </tr>#}
+{#                      </tbody>#}
+{#                    </table>#}
+{#                    <p class="checkout"><a href="cart.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> مشاهده سبد</a>&nbsp;&nbsp;&nbsp;<a href="checkout.html" class="btn btn-primary"><i class="fa fa-share"></i> تسویه حساب</a></p>#}
+{#                  </div>#}
+{#                </li>#}
+{#              </ul>#}
+{#            </div>#}
           </div>
           <!-- Mini Cart End-->
           <!-- جستجو Start-->
@@ -144,264 +144,11 @@
               <li class="mega-menu dropdown"><a>دسته بندی محصولات</a>
               <div class="dropdown-menu">
                   {% render_partial 'product_categories_partial' %}
-{#                <div class="column col-lg-2 col-md-3"><a href="category.html">موبایل</a>#}
-{#                  <div>#}
-{#                    <ul>#}
-{#                      <li><a href="category.html">لوازم جانبی<span>&rsaquo;</span></a>#}
-{#                        <div class="dropdown-menu">#}
-{#                          <ul>#}
-{#                            <li><a href="category.html">کیف گوشی</a></li>#}
-{#                            <li><a href="category.html">کاور گوشی</a></li>#}
-{#                            <li><a href="category.html">شارژر همراه</a></li>#}
-{#                          </ul>#}
-{#                        </div>#}
-{#                      </li>#}
-{#                      <li><a href="category.html">برندها<span>&rsaquo;</span></a>#}
-{#                        <div class="dropdown-menu">#}
-{#                          <ul>#}
-{#                            <li><a href="category.html">اپل</a></li>#}
-{#                            <li><a href="category.html">سامسونگ</a></li>#}
-{#                            <li><a href="category.html">هوآوی</a></li>#}
-{#                            <li><a href="category.html">شیائومی</a></li>#}
-{#                          </ul>#}
-{#                        </div>#}
-{#                      </li>#}
-{#                      <li><a href="category.html">سیستم عامل<span>&rsaquo;</span></a>#}
-{#                        <div class="dropdown-menu">#}
-{#                          <ul>#}
-{#                            <li><a href="category.html">آی او اس</a></li>#}
-{#                            <li><a href="category.html">اندروید</a></li>#}
-{#                            <li><a href="category.html">ویندوز</a></li>#}
-{#                          </ul>#}
-{#                        </div>#}
-{#                      </li>#}
-{#                    </ul>#}
-{#                  </div>#}
-{#                </div>#}
-{#                <div class="column col-lg-2 col-md-3"> <a href="category.html">لپ تاپ</a>#}
-{#                  <div>#}
-{#                    <ul>#}
-{#                      <li> <a href="category.html">لوازم جانبی<span>&rsaquo;</span></a>#}
-{#                        <div class="dropdown-menu">#}
-{#                          <ul>#}
-{#                            <li> <a href="category.html">کیف لپ تاپ</a> </li>#}
-{#                            <li> <a href="category.html">کاور لپ تاپ</a> </li>#}
-{#                            <li> <a href="category.html">شارژر لپ تاپ</a> </li>#}
-{#                            <li> <a href="category.html">خنک کننده لپ تاپ</a> </li>#}
-{#                          </ul>#}
-{#                        </div>#}
-{#                      </li>#}
-{#                      <li> <a href="category.html">برندها<span>&rsaquo;</span></a>#}
-{#                        <div class="dropdown-menu">#}
-{#                          <ul>#}
-{#                            <li> <a href="category.html">اپل</a> </li>#}
-{#                            <li> <a href="category.html">سامسونگ</a> </li>#}
-{#                            <li> <a href="category.html">ایسوس</a> </li>#}
-{#                            <li> <a href="category.html">اچ پی</a> </li>#}
-{#                          </ul>#}
-{#                        </div>#}
-{#                      </li>#}
-{#                      <li> <a href="category.html">سیستم عامل<span>&rsaquo;</span></a>#}
-{#                        <div class="dropdown-menu">#}
-{#                          <ul>#}
-{#                            <li> <a href="category.html">آی او اس</a> </li>#}
-{#                            <li> <a href="category.html">ویندوز</a> </li>#}
-{#                            <li> <a href="category.html">لینوکس</a> </li>#}
-{#                          </ul>#}
-{#                        </div>#}
-{#                      </li>#}
-{#                    </ul>#}
-{#                  </div>#}
-{#                </div>#}
-{#                <div class="column col-lg-2 col-md-3"><a href="category.html">ساعت هوشمند</a>#}
-{#                  <div>#}
-{#                    <ul>#}
-{#                      <li> <a href="category.html">لوازم جانبی<span>&rsaquo;</span></a>#}
-{#                        <div class="dropdown-menu">#}
-{#                          <ul>#}
-{#                            <li> <a href="category.html">کیف ساعت هوشمند</a> </li>#}
-{#                            <li> <a href="category.html">کاور ساعت هوشمند</a> </li>#}
-{#                            <li> <a href="category.html">شارژر همراه</a> </li>#}
-{#                          </ul>#}
-{#                        </div>#}
-{#                      </li>#}
-{#                      <li> <a href="category.html">برندها<span>&rsaquo;</span></a>#}
-{#                        <div class="dropdown-menu">#}
-{#                          <ul>#}
-{#                            <li> <a href="category.html">اپل</a> </li>#}
-{#                            <li> <a href="category.html">سامسونگ</a> </li>#}
-{#                            <li> <a href="category.html">هوآوی</a> </li>#}
-{#                            <li> <a href="category.html">شیائومی</a> </li>#}
-{#                          </ul>#}
-{#                        </div>#}
-{#                      </li>#}
-{#                      <li> <a href="category.html">سیستم عامل<span>&rsaquo;</span></a>#}
-{#                        <div class="dropdown-menu">#}
-{#                          <ul>#}
-{#                            <li> <a href="category.html">آی او اس</a> </li>#}
-{#                            <li> <a href="category.html">اندروید</a> </li>#}
-{#                            <li> <a href="category.html">ویندوز</a> </li>#}
-{#                          </ul>#}
-{#                        </div>#}
-{#                      </li>#}
-{#                    </ul>#}
-{#                  </div>#}
-{#                </div>#}
-{#                <div class="column col-lg-2 col-md-3"> <a href="category.html">مودم</a>#}
-{#                  <div>#}
-{#                    <ul>#}
-{#                      <li> <a href="category.html">برندها<span>&rsaquo;</span></a>#}
-{#                        <div class="dropdown-menu">#}
-{#                          <ul>#}
-{#                            <li> <a href="category.html">همراه اول</a> </li>#}
-{#                            <li> <a href="category.html">ایرانسل</a> </li>#}
-{#                            <li> <a href="category.html">تی پی لینک</a> </li>#}
-{#                            <li> <a href="category.html">دی لینک</a> </li>#}
-{#                            <li> <a href="category.html">یوتل</a> </li>#}
-{#                          </ul>#}
-{#                        </div>#}
-{#                      </li>#}
-{#                    </ul>#}
-{#                  </div>#}
-{#                </div>#}
-{#                <div class="column col-lg-2 col-md-3"> <a href="category.html">تبلت</a>#}
-{#                  <div>#}
-{#                    <ul>#}
-{#                      <li> <a href="category.html">لوازم جانبی<span>&rsaquo;</span></a>#}
-{#                        <div class="dropdown-menu">#}
-{#                          <ul>#}
-{#                            <li> <a href="category.html">کیف تبلت</a> </li>#}
-{#                            <li> <a href="category.html">کاور تبلت</a> </li>#}
-{#                            <li> <a href="category.html">شارژر همراه</a> </li>#}
-{#                          </ul>#}
-{#                        </div>#}
-{#                      </li>#}
-{#                      <li> <a href="category.html">برندها<span>&rsaquo;</span></a>#}
-{#                        <div class="dropdown-menu">#}
-{#                          <ul>#}
-{#                            <li> <a href="category.html">اپل</a> </li>#}
-{#                            <li> <a href="category.html">سامسونگ</a> </li>#}
-{#                            <li> <a href="category.html">هوآوی</a> </li>#}
-{#                            <li> <a href="category.html">شیائومی</a> </li>#}
-{#                          </ul>#}
-{#                        </div>#}
-{#                      </li>#}
-{#                      <li> <a href="category.html">سیستم عامل<span>&rsaquo;</span></a>#}
-{#                        <div class="dropdown-menu">#}
-{#                          <ul>#}
-{#                            <li> <a href="category.html">آی او اس</a> </li>#}
-{#                            <li> <a href="category.html">اندروید</a> </li>#}
-{#                            <li> <a href="category.html">ویندوز</a> </li>#}
-{#                          </ul>#}
-{#                        </div>#}
-{#                      </li>#}
-{#                    </ul>#}
-{#                  </div>#}
-{#                </div>#}
-{#                <div class="column col-lg-2 col-md-3"><a href="category.html">کامپیوتر</a>#}
-{#                  <div>#}
-{#                    <ul>#}
-{#                      <li> <a href="category.html">لوازم جانبی<span>&rsaquo;</span></a>#}
-{#                        <div class="dropdown-menu">#}
-{#                          <ul>#}
-{#                            <li> <a href="category.html">کیف کامپیوتر</a> </li>#}
-{#                            <li> <a href="category.html">کاور کامپیوتر</a> </li>#}
-{#                            <li> <a href="category.html">شارژر کامپیوتر</a> </li>#}
-{#                            <li> <a href="category.html">خنک کننده لپ تاپ</a> </li>#}
-{#                          </ul>#}
-{#                        </div>#}
-{#                      </li>#}
-{#                      <li> <a href="category.html">برندها<span>&rsaquo;</span></a>#}
-{#                        <div class="dropdown-menu">#}
-{#                          <ul>#}
-{#                            <li> <a href="category.html">اپل</a> </li>#}
-{#                            <li> <a href="category.html">سامسونگ</a> </li>#}
-{#                            <li> <a href="category.html">ایسوس</a> </li>#}
-{#                            <li> <a href="category.html">اچ پی</a> </li>#}
-{#                          </ul>#}
-{#                        </div>#}
-{#                      </li>#}
-{#                      <li> <a href="category.html">سیستم عامل<span>&rsaquo;</span></a>#}
-{#                        <div class="dropdown-menu">#}
-{#                          <ul>#}
-{#                            <li> <a href="category.html">آی او اس</a> </li>#}
-{#                            <li> <a href="category.html">ویندوز</a> </li>#}
-{#                            <li> <a href="category.html">لینوکس</a> </li>#}
-{#                          </ul>#}
-{#                        </div>#}
-{#                      </li>#}
-{#                    </ul>#}
-{#                  </div>#}
-{#                </div>#}
-{#                <div class="column col-lg-2 col-md-3"> <a href="category.html">هارد و فلش</a>#}
-{#                  <div>#}
-{#                    <ul>#}
-{#                      <li> <a href="category.html">نوع<span>&rsaquo;</span></a>#}
-{#                        <div class="dropdown-menu">#}
-{#                          <ul>#}
-{#                            <li> <a href="category.html">SSD</a> </li>#}
-{#                            <li> <a href="category.html">SD</a> </li>#}
-{#                            <li> <a href="category.html">VD</a> </li>#}
-{#                          </ul>#}
-{#                        </div>#}
-{#                      </li>#}
-{#                    </ul>#}
-{#                  </div>#}
-{#                </div>#}
-{#                <div class="column col-lg-2 col-md-3"> <a href="category.html">سخت افزار</a>#}
-{#                  <div>#}
-{#                    <ul>#}
-{#                      <li><a href="category.html">تعمیرات</a></li>#}
-{#                    </ul>#}
-{#                  </div>#}
-{#                </div>#}
-              </div>
-            </li>
-            <li class="menu_brands dropdown"><a href="#">برند ها</a>
-              <div class="dropdown-menu">
-                <div class="col-lg-1 col-md-2 col-sm-3 col-xs-6"><a href="#"><img src="{% static 'image/product/apple_logo-60x60.jpg' %}" title="اپل" alt="اپل" /></a><a href="#">اپل</a></div>
-                <div class="col-lg-1 col-md-2 col-sm-3 col-xs-6"><a href="#"><img src="{% static 'image/product/canon_logo-60x60.jpg' %}" title="کنون" alt="کنون" /></a><a href="#">کنون</a></div>
-                <div class="col-lg-1 col-md-2 col-sm-3 col-xs-6"> <a href="#"><img src="{% static 'image/product/hp_logo-60x60.jpg' %}" title="اچ پی" alt="اچ پی" /></a><a href="#">اچ پی</a></div>
-                <div class="col-lg-1 col-md-2 col-sm-3 col-xs-6"><a href="#"><img src="{% static 'image/product/htc_logo-60x60.jpg' %}" title="اچ تی سی" alt="اچ تی سی" /></a><a href="#">اچ تی سی</a></div>
-                <div class="col-lg-1 col-md-2 col-sm-3 col-xs-6"><a href="#"><img src="{% static 'image/product/palm_logo-60x60.jpg' %}" title="پالم" alt="پالم" /></a><a href="#">پالم</a></div>
-                <div class="col-lg-1 col-md-2 col-sm-3 col-xs-6"><a href="#"><img src="{% static 'image/product/sony_logo-60x60.jpg' %}" title="سونی" alt="سونی" /></a><a href="#">سونی</a> </div>
-                <div class="col-lg-1 col-md-2 col-sm-3 col-xs-6"><a href="#"><img src="{% static 'image/product/canon_logo-60x60.jpg' %}" title="test" alt="test" /></a><a href="#">test</a> </div>
-                <div class="col-lg-1 col-md-2 col-sm-3 col-xs-6"><a href="#"><img src="{% static 'image/product/apple_logo-60x60.jpg' %}" title="test 3" alt="test 3" /></a><a href="#">test 3</a></div>
-                <div class="col-lg-1 col-md-2 col-sm-3 col-xs-6"><a href="#"><img src="{% static 'image/product/canon_logo-60x60.jpg' %}" title="test 5" alt="test 5" /></a><a href="#">test 5</a> </div>
-                <div class="col-lg-1 col-md-2 col-sm-3 col-xs-6"><a href="#"><img src="{% static 'image/product/canon_logo-60x60.jpg' %}" title="test 6" alt="test 6" /></a><a href="#">test 6</a></div>
-                <div class="col-lg-1 col-md-2 col-sm-3 col-xs-6"><a href="#"><img src="{% static 'image/product/apple_logo-60x60.jpg' %}" title="test 7" alt="test 7" /></a><a href="#">test 7</a> </div>
-                <div class="col-lg-1 col-md-2 col-sm-3 col-xs-6"><a href="#"><img src="{% static 'image/product/canon_logo-60x60.jpg' %}" title="test1" alt="test1" /></a><a href="#">test1</a></div>
-                <div class="col-lg-1 col-md-2 col-sm-3 col-xs-6"><a href="#"><img src="{% static 'image/product/apple_logo-60x60.jpg' %}" title="test2" alt="test2" /></a><a href="#">test2</a></div>
-              </div>
-            </li>
             <li class="custom-link"><a href="#">صفحه پروفایل</a></li>
             <li class="custom-link"><a href="{% url 'orders:cart' %}">سبد خرید</a></li>
             <li class="custom-link"><a href="#">صفحه پرداخت</a></li>
-            <li class="dropdown information-link"><a>برگه ها</a>
-              <div class="dropdown-menu">
-                <ul>
-                  <li><a href="{% url 'login' %}">ورود</a></li>
-                  <li><a href="{% url 'register' %}">ثبت نام</a></li>
-                  <li><a href="category.html">دسته بندی (شبکه/لیست)</a></li>
-                  <li><a href="{% url 'products:products_list' %}">محصولات</a></li>
-                  <li><a href="{% url 'orders:cart' %}">سبد خرید</a></li>
-                  <li><a href="checkout.html">تسویه حساب</a></li>
-                  <li><a href="compare.html">مقایسه</a></li>
-                  <li><a href="wishlist.html">لیست آرزو</a></li>
-                  <li><a href="search.html">جستجو</a></li>
-                </ul>
-                <ul>
-                  <li><a href="about-us.html">درباره ما</a></li>
-                  <li><a href="404.html">404</a></li>
-                  <li><a href="elements.html">عناصر</a></li>
-                  <li><a href="faq.html">سوالات متداول</a></li>
-                  <li><a href="sitemap.html">نقشه سایت</a></li>
-                  <li><a href="contact-us.html">تماس با ما</a></li>
-                </ul>
-              </div>
-            </li>
             <li class="contact-link"><a href="{% url 'contact' %}">تماس با ما</a></li>
-            <li class="custom-link-right"><a href="#" target="_blank"> همین حالا بخرید!</a></li>
+            <li class="custom-link-right"><a href="{% url 'products:products_list' %}" target="_blank"> همین حالا بخرید!</a></li>
           </ul>
         </div>
       </nav>
