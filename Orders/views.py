@@ -50,7 +50,7 @@ def cart(request):
 @login_required(login_url='/login')
 def remove_order(request, *args, **kwargs):
     detail_id = kwargs['detail_id']
-    order_detail = OrderDetail.objects.get_queryset().get(id=detail_id, order_user_id=request.user.id)
+    order_detail = OrderDetail.objects.get_queryset().get(id=detail_id, order__user_id=request.user.id)
     if order_detail is not None:
         order_detail.delete()
         return redirect('/cart')
