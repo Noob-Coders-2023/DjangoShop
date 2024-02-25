@@ -43,6 +43,7 @@
             <ul>
                 {% if request.user.is_authenticated %}
                     <li><a href="{% url 'logout' %}">خروج</a></li>
+                    <li><a href="{% url 'profile:profile' %}">حساب کاربری</a></li>
                 {% else %}
                     <li><a href="{% url 'login' %}">ورود</a></li>
                     <li><a href="{% url 'register' %}">ثبت نام</a></li>
@@ -144,7 +145,6 @@
               <li class="mega-menu dropdown"><a>دسته بندی محصولات</a>
               <div class="dropdown-menu">
                   {% render_partial 'product_categories_partial' %}
-            <li class="custom-link"><a href="/profile">صفحه پروفایل</a></li>
             <li class="custom-link"><a href="{% url 'orders:cart' %}">سبد خرید</a></li>
             <li class="custom-link"><a href="#">صفحه پرداخت</a></li>
             <li class="contact-link"><a href="{% url 'contact' %}">تماس با ما</a></li>
