@@ -34,6 +34,7 @@ urlpatterns = [
     path('logout', logout_page, name='logout'),
     path('', include('Products.urls', namespace='products')),
     path('', include('Orders.urls', namespace='orders')),
+    path('', include('Profile.urls', namespace='profile')),
     path('product_categories_partial', product_categories_partial, name='product_categories_partial')
 ]
 

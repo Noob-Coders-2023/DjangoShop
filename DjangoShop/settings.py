@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'Contact',
     'Settings',
     'Orders',
+    'Profile',
 ]
 
 MIDDLEWARE = [
