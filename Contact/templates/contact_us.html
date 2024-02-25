@@ -5,19 +5,13 @@
 
 <div id="container">
 <div class="container">
-  <!-- Breadcrumb Start-->
-  <ul class="breadcrumb">
-    <li><a href="{% url 'home' %}"><i class="fa fa-home"></i></a></li>
-    <li><a href="{% url 'contact' %}">تماس با ما</a></li>
-  </ul>
-  <!-- Breadcrumb End-->
   <div class="row">
     <!--Middle Part Start-->
     <div id="content" class="col-sm-9">
       <h1 class="title">تماس با ما</h1>
       <h3 class="subtitle">محل ما</h3>
       <div class="row">
-        <div class="col-sm-3"><img src="{% static 'image/product/store_location-275x180.jpg'%}" alt="قالب مارکت شاپ" title="قالب مارکت شاپ" class="img-thumbnail" /></div>
+        <div class="col-sm-3"><img src="{% static 'image/product/store_location-275x180.jpg'%}" alt="فروشگاه ما" title="فروشگاه ما" class="img-thumbnail" /></div>
         <div class="col-sm-3"><strong>آدرس فروشگاه</strong><br />
           <address>{{ setting.address }}</address>
         </div>
@@ -31,8 +25,6 @@
           6 عصر الی 9 شب<br />
           <br />
           <br />
-{#          <strong>دیدگاه ها</strong><br />#}
-{#          در اینجا توضیحات دلخواه خود را قرار دهید. فروشگاه چک قبول نمیکند! #}
         </div>
       </div>
     <br />
@@ -71,7 +63,6 @@
               {% endfor %}
           </div>
 
-
         </fieldset>
         <div class="buttons">
           <div class="pull-right">
@@ -85,9 +76,6 @@
         <h2 class="subtitle">درباره ما</h2>
         <p style="text-align: justify;">{{ setting.about }}</p>
       </div>
-{#      <div class="banner owl-carousel">#}
-{#        <div class="item"> <a href="#"><img src="{% static 'image/banner/small-banner1-265x350.jpg' %}" alt="small banner" class="img-responsive" /></a> </div>#}
-{#      </div>#}
     </aside>
     <!--Middle Part End -->
   </div>

@@ -58,11 +58,16 @@ def product_detail(request, *args, **kwargs):
     gallery = ProductGallery.objects.filter(product_id=get_product_id)
     related_products = Product.objects.get_queryset().filter(categories__product=product).distinct()
 
+    featured_products = Product.objects.filter(featured=True)
+    most_viewed_products = Product.objects.order_by('-visits').all()[:5]
+
     context = {
         'product': product,
         'gallery': gallery,
         'related_products': related_products,
-        'new_order_form': new_order_form
+        'new_order_form': new_order_form,
+        'featured_products': featured_products,
+        'most_viewed_products': most_viewed_products,
     }
 
     tag = Tag.objects.first()

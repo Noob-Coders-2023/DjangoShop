@@ -4,7 +4,7 @@
     <div class="fpart-first">
       <div class="container">
         <div class="row">
-          <div class="contact col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <div class="contact col-lg-8 col-md-8 col-sm-24 col-xs-24">
             <h5>اطلاعات تماس</h5>
             <ul>
               <li class="address"><i class="fa fa-map-marker"></i>{{ setting.address }}</li>
@@ -16,10 +16,9 @@
           <div class="column col-lg-2 col-md-2 col-sm-3 col-xs-12">
             <h5>اطلاعات</h5>
             <ul>
-              <li><a href="about-us.html">درباره ما</a></li>
-              <li><a href="about-us.html">اطلاعات ارسال</a></li>
-              <li><a href="about-us.html">حریم خصوصی</a></li>
-              <li><a href="about-us.html">شرایط و قوانین</a></li>
+              <li><a href="{% url 'home' %}">درباره ما</a></li>
+              <li><a href="{% url 'home' %}">حریم خصوصی</a></li>
+              <li><a href="{% url 'home' %}">شرایط و قوانین</a></li>
             </ul>
           </div>
           <div class="column col-lg-2 col-md-2 col-sm-3 col-xs-12">
@@ -27,25 +26,7 @@
             <ul>
               <li><a href="{% url 'contact' %}">تماس با ما</a></li>
               <li><a href="{% url 'home' %}">بازگشت</a></li>
-              <li><a href="sitemap.html">نقشه سایت</a></li>
-            </ul>
-          </div>
-          <div class="column col-lg-2 col-md-2 col-sm-3 col-xs-12">
-            <h5>امکانات جانبی</h5>
-            <ul>
-              <li><a href="#">برند ها</a></li>
-              <li><a href="#">کارت هدیه</a></li>
-              <li><a href="#">بازاریابی</a></li>
-              <li><a href="#">ویژه ها</a></li>
-            </ul>
-          </div>
-          <div class="column col-lg-2 col-md-2 col-sm-3 col-xs-12">
-            <h5>حساب من</h5>
-            <ul>
-              <li><a href="#">حساب کاربری</a></li>
-              <li><a href="#">تاریخچه سفارشات</a></li>
-              <li><a href="#">لیست علاقه مندی</a></li>
-              <li><a href="#">خبرنامه</a></li>
+              <li><a href="{% url 'home' %}">نقشه سایت</a></li>
             </ul>
           </div>
         </div>
@@ -65,34 +46,13 @@
           <div class="custom-text text-center">
             <p>{{ setting.about }}</p>
           </div>
-          <div class="payments_types"> <a href="#" target="_blank"> <img data-toggle="tooltip" src="{% static 'image/payment/payment_paypal.png' %}" alt="paypal" title="PayPal"></a> <a href="#" target="_blank"> <img data-toggle="tooltip" src="{% static 'image/payment/payment_american.png' %}" alt="american-express" title="American Express"></a> <a href="#" target="_blank"> <img data-toggle="tooltip" src="{% static 'image/payment/payment_2checkout.png' %}" alt="2checkout" title="2checkout"></a> <a href="#" target="_blank"> <img data-toggle="tooltip" src="{% static 'image/payment/payment_maestro.png' %}" alt="maestro" title="Maestro"></a> <a href="#" target="_blank"> <img data-toggle="tooltip" src="{% static 'image/payment/payment_discover.png' %}" alt="discover" title="Discover"></a> <a href="#" target="_blank"> <img data-toggle="tooltip" src="{% static 'image/payment/payment_mastercard.png' %}" alt="mastercard" title="MasterCard"></a> </div>
+            <br>
         </div>
       </div>
     </div>
     <div id="back-top"><a data-toggle="tooltip" title="بازگشت به بالا" href="javascript:void(0)" class="backtotop"><i class="fa fa-chevron-up"></i></a></div>
   </footer>
   <!--Footer End-->
-  <!-- Custom Side Block Start -->
-{#  <div id="custom_side_block" class="custom_side_block_left sort-order-4">#}
-{#    <div class="custom_side_block_icon"> <i class="fa fa-chevron-right"></i> </div>#}
-{#    <table>#}
-{#      <tbody>#}
-{#        <tr>#}
-{#          <td><h2>بلاک های محتوا</h2></td>#}
-{#        </tr>#}
-{#        <tr>#}
-{#          <td><img alt="" src="{% static 'image/banner/cms-block.jpg' %}"></td>#}
-{#        </tr>#}
-{#        <tr>#}
-{#          <td>میتوانید محتوای دلخواه خود را به این بخش اضافه کنید.</td>#}
-{#        </tr>#}
-{#        <tr>#}
-{#          <td><strong><a href="#">ادامه مطلب</a></strong></td>#}
-{#        </tr>#}
-{#      </tbody>#}
-{#    </table>#}
-{#  </div>#}
-  <!-- Custom Side Block End -->
 </div>
 <!-- JS Part Start-->
 <script type="text/javascript" src="{% static 'js/jquery-2.1.1.min.js' %}"></script>

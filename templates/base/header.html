@@ -35,7 +35,6 @@
               <ul>
                 <li class="mobile"><i class="fa fa-phone"></i>{{ setting.phone }}</li>
                 <li class="email"><a href="mailto:{{ setting.email }}"><i class="fa fa-envelope"></i>{{ setting.email }}</a></li>
-                <li><a href="checkout.html">تسویه حساب</a></li>
               </ul>
             </div>
           </div>
@@ -60,63 +59,11 @@
         <div class="table-container">
           <!-- Logo Start -->
           <div class="col-table-cell col-lg-6 col-md-6 col-sm-12 col-xs-12 inner">
-            <div id="logo"><a href="{% url 'home' %}"><img class="img-responsive" src="{{ setting.logo.url }}" title="MarketShop" alt="MarketShop" /></a></div>
+            <div id="logo"><a href="{% url 'home' %}"><img class="img-responsive" src="{{ setting.logo.url }}" title="فروشگاه ما" alt="فروشگاه ما" /></a></div>
           </div>
           <!-- Logo End -->
           <!-- Mini Cart Start-->
           <div class="col-table-cell col-lg-3 col-md-3 col-sm-6 col-xs-12">
-{#            <div id="cart">#}
-{#              <button type="button" data-toggle="dropdown" data-loading-text="Loading..." class="heading dropdown-toggle">#}
-{#              <span class="cart-icon pull-left flip"></span>#}
-{#              <span id="cart-total">2 آیتم - 132000 تومان</span></button>#}
-{#              <ul class="dropdown-menu">#}
-{#                <li>#}
-{#                  <table class="table">#}
-{#                    <tbody>#}
-{#                      <tr>#}
-{#                        <td class="text-center"><a href="{% url 'products:products_list' %}"><img class="img-thumbnail" title="کفش راحتی مردانه" alt="کفش راحتی مردانه" src="{% static 'image/product/sony_vaio_1-50x50.jpg' %}"></a></td>#}
-{#                        <td class="text-left"><a href="{% url 'products:products_list' %}">کفش راحتی مردانه</a></td>#}
-{#                        <td class="text-right">x 1</td>#}
-{#                        <td class="text-right">32000 تومان</td>#}
-{#                        <td class="text-center"><button class="btn btn-danger btn-xs remove" title="حذف" onClick="" type="button"><i class="fa fa-times"></i></button></td>#}
-{#                      </tr>#}
-{#                      <tr>#}
-{#                        <td class="text-center"><a href="{% url 'products:products_list' %}"><img class="img-thumbnail" title="تبلت ایسر" alt="تبلت ایسر" src="{% static 'image/product/samsung_tab_1-50x50.jpg' %}"></a></td>#}
-{#                        <td class="text-left"><a href="{% url 'products:products_list' %}">تبلت ایسر</a></td>#}
-{#                        <td class="text-right">x 1</td>#}
-{#                        <td class="text-right">98000 تومان</td>#}
-{#                        <td class="text-center"><button class="btn btn-danger btn-xs remove" title="حذف" onClick="" type="button"><i class="fa fa-times"></i></button></td>#}
-{#                      </tr>#}
-{#                    </tbody>#}
-{#                  </table>#}
-{#                </li>#}
-{#                <li>#}
-{#                  <div>#}
-{#                    <table class="table table-bordered">#}
-{#                      <tbody>#}
-{#                        <tr>#}
-{#                          <td class="text-right"><strong>جمع کل</strong></td>#}
-{#                          <td class="text-right">132000 تومان</td>#}
-{#                        </tr>#}
-{#                        <tr>#}
-{#                          <td class="text-right"><strong>کسر هدیه</strong></td>#}
-{#                          <td class="text-right">4000 تومان</td>#}
-{#                        </tr>#}
-{#                        <tr>#}
-{#                          <td class="text-right"><strong>مالیات</strong></td>#}
-{#                          <td class="text-right">11880 تومان</td>#}
-{#                        </tr>#}
-{#                        <tr>#}
-{#                          <td class="text-right"><strong>قابل پرداخت</strong></td>#}
-{#                          <td class="text-right">139880 تومان</td>#}
-{#                        </tr>#}
-{#                      </tbody>#}
-{#                    </table>#}
-{#                    <p class="checkout"><a href="cart.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> مشاهده سبد</a>&nbsp;&nbsp;&nbsp;<a href="checkout.html" class="btn btn-primary"><i class="fa fa-share"></i> تسویه حساب</a></p>#}
-{#                  </div>#}
-{#                </li>#}
-{#              </ul>#}
-{#            </div>#}
           </div>
           <!-- Mini Cart End-->
           <!-- جستجو Start-->
@@ -134,7 +81,7 @@
     </header>
     <!-- Header End-->
 
-         <!-- Main آقایانu Start-->
+    <!-- Main Start-->
     <div class="container">
       <nav id="menu" class="navbar">
         <div class="navbar-header"> <span class="visible-xs visible-sm"> منو <b></b></span></div>
@@ -153,5 +100,6 @@
         </div>
       </nav>
     </div>
-    <!-- Main آقایانu End-->
+    <!-- Main End-->
   </div>
+
